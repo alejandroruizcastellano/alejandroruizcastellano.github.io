@@ -1,3 +1,71 @@
 ---
-// Nav fija con scroll spy (opcional)
+// Nav fija con scroll spy
+const navLinks = [
+	{ href: '#sobre-mi', label: 'Sobre mí' },
+	{ href: '#tecnologias', label: 'Skills' },
+	{ href: '#proyectos', label: 'Proyectos' },
+	{ href: '#contacto', label: 'Contacto' },
+];
 ---
+
+<header class="sticky top-0 z-50 border-b border-slate-200 bg-white/90 backdrop-blur">
+	<nav class="relative mx-auto flex h-14 max-w-4xl items-center justify-end px-6 sm:px-10">
+		<button
+			id="nav-toggle"
+			aria-label="Abrir menú"
+			class="flex h-9 w-9 items-center justify-center rounded-md border border-slate-200 text-slate-600 sm:hidden"
+		>
+			<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" class="h-5 w-5">
+				<path stroke-linecap="round" stroke-linejoin="round" d="M3.75 6.75h16.5M3.75 12h16.5M3.75 17.25h16.5" />
+			</svg>
+		</button>
+
+		<ul
+			id="nav-links"
+			class="absolute left-0 top-14 hidden w-full flex-col gap-1 border-b border-slate-200 bg-white p-4 sm:static sm:flex sm:w-auto sm:flex-row sm:gap-6 sm:border-none sm:bg-transparent sm:p-0"
+		>
+			{navLinks.map((link) => (
+				<li>
+					<a
+						href={link.href}
+						data-nav-link
+						class="block py-2 text-sm text-slate-600 transition-colors hover:text-teal-600 sm:py-0 [&.active]:font-medium [&.active]:text-teal-600"
+					>
+						{link.label}
+					</a>
+				</li>
+			))}
+		</ul>
+	</nav>
+</header>
+
+<script>
+	const toggle = document.getElementById('nav-toggle');
+	const links = document.getElementById('nav-links');
+
+	toggle?.addEventListener('click', () => {
+		links?.classList.toggle('hidden');
+	});
+
+	const navLinks = document.querySelectorAll<HTMLAnchorElement>('[data-nav-link]');
+	const sections = document.querySelectorAll<HTMLElement>('section[id]');
+
+	navLinks.forEach((link) => {
+		link.addEventListener('click', () => links?.classList.add('hidden'));
+	});
+
+	const observer = new IntersectionObserver(
+		(entries) => {
+			entries.forEach((entry) => {
+				if (!entry.isIntersecting) return;
+				const id = entry.target.getAttribute('id');
+				navLinks.forEach((link) => {
+					link.classList.toggle('active', link.getAttribute('href') === `#${id}`);
+				});
+			});
+		},
+		{ rootMargin: '-50% 0px -50% 0px' }
+	);
+
+	sections.forEach((section) => observer.observe(section));
+</script>
