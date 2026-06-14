@@ -1,0 +1,29 @@
+---
+import Layout from '../../layouts/Layout.astro';
+import ProjectCard from '../../components/ProjectCard.astro';
+import Footer from '../../components/Footer.astro';
+import { projects } from '../../data/projects';
+
+// TODO (v1): añadir filtro de proyectos por skill/tecnología.
+// Mantener oculto hasta que haya suficientes proyectos para justificarlo.
+---
+
+<Layout title="Proyectos — Alejandro Ruiz Castellano">
+	<section class="mx-auto max-w-4xl px-6 py-8 sm:px-10 sm:py-12">
+		<a href="/" class="text-sm font-medium text-teal-600 transition-colors hover:text-teal-500">
+			← Volver al inicio
+		</a>
+
+		<h1 class="mb-4 mt-6 inline-block border-b-2 border-teal-500 text-lg font-medium text-navy-800 sm:text-xl">
+			Proyectos
+		</h1>
+
+		<div class="grid grid-cols-1 gap-4 sm:grid-cols-2">
+			{projects.map((project) => (
+				<ProjectCard {...project} />
+			))}
+		</div>
+	</section>
+
+	<Footer />
+</Layout>

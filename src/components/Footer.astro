@@ -1,3 +1,46 @@
 ---
 // Footer: nombre + año, ubicación, links a redes
+import Icon from './Icon.astro';
+
+const year = new Date().getFullYear();
+const githubHref = 'https://github.com/alejandroruizcastellano';
+// TODO: sustituir por la URL real de LinkedIn antes del deploy final
+const linkedinHref = '#';
+// TODO: sustituir por el email real antes del deploy final
+const emailHref = 'mailto:#';
 ---
+
+<footer class="border-t border-slate-200">
+	<div class="mx-auto flex max-w-4xl flex-col items-center gap-3 px-6 py-8 text-center sm:flex-row sm:justify-between sm:px-10 sm:text-left">
+		<div class="text-sm text-slate-600">
+			<p>Alejandro Ruiz Castellano · {year}</p>
+			<p class="text-xs text-slate-400">Santa Cruz de Tenerife, Canarias</p>
+		</div>
+
+		<div class="flex gap-3">
+			<a
+				href={emailHref}
+				aria-label="Email"
+				class="flex h-9 w-9 items-center justify-center rounded-md border border-slate-200 text-slate-600 transition-colors hover:border-teal-500 hover:text-teal-600"
+			>
+				<Icon name="email" class="h-4 w-4" />
+			</a>
+			<a
+				href={linkedinHref}
+				aria-label="LinkedIn"
+				class="flex h-9 w-9 items-center justify-center rounded-md border border-slate-200 text-slate-600 transition-colors hover:border-teal-500 hover:text-teal-600"
+			>
+				<Icon name="linkedin" class="h-4 w-4" />
+			</a>
+			<a
+				href={githubHref}
+				target="_blank"
+				rel="noopener noreferrer"
+				aria-label="GitHub"
+				class="flex h-9 w-9 items-center justify-center rounded-md border border-slate-200 text-slate-600 transition-colors hover:border-teal-500 hover:text-teal-600"
+			>
+				<Icon name="github" class="h-4 w-4" />
+			</a>
+		</div>
+	</div>
+</footer>

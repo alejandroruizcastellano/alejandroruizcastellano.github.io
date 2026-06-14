@@ -1,3 +1,32 @@
 ---
 // CTA con fondo oscuro: email + LinkedIn
+import Icon from './Icon.astro';
+
+// TODO: sustituir por el email y la URL de LinkedIn reales antes del deploy final
+const emailHref = 'mailto:#';
+const linkedinHref = '#';
 ---
+
+<section id="contacto" class="mx-auto max-w-4xl px-6 py-8 sm:px-10 sm:py-12">
+	<div class="rounded-xl bg-[linear-gradient(135deg,#0B1D33_0%,#1A3A5C_100%)] p-6 text-center sm:p-10">
+		<h2 class="text-xl font-medium text-white sm:text-2xl">Contacto</h2>
+		<p class="mt-2 text-xs text-white/60 sm:text-sm">Santa Cruz de Tenerife, Canarias</p>
+
+		<div class="mt-6 flex flex-wrap justify-center gap-3">
+			<a
+				href={emailHref}
+				aria-label="Email"
+				class="flex h-10 w-10 items-center justify-center rounded-md border border-white/30 text-white transition-colors hover:border-teal-400 hover:text-teal-400"
+			>
+				<Icon name="email" class="h-5 w-5" />
+			</a>
+			<a
+				href={linkedinHref}
+				aria-label="LinkedIn"
+				class="flex h-10 w-10 items-center justify-center rounded-md border border-white/30 text-white transition-colors hover:border-teal-400 hover:text-teal-400"
+			>
+				<Icon name="linkedin" class="h-5 w-5" />
+			</a>
+		</div>
+	</div>
+</section>

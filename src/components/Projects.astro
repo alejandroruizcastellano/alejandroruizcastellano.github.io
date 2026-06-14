@@ -1,3 +1,25 @@
 ---
-// Grid de ProjectCard
+// Grid de ProjectCard (preview de la home: máximo 6 proyectos)
+import ProjectCard from './ProjectCard.astro';
+import { projects } from '../data/projects';
+
+const featuredProjects = projects.slice(0, 6);
 ---
+
+<section id="proyectos" class="mx-auto max-w-4xl px-6 py-1 sm:px-10 sm:py-3">
+	<h2 class="mb-4 inline-block border-b-2 border-teal-500 text-lg font-medium text-navy-800 sm:text-xl">
+		Proyectos
+	</h2>
+
+	<div class="grid grid-cols-1 gap-4 sm:grid-cols-2">
+		{featuredProjects.map((project) => (
+			<ProjectCard {...project} />
+		))}
+	</div>
+
+	<div class="mt-6 text-center">
+		<a href="/projects/" class="text-sm font-medium text-teal-600 transition-colors hover:text-teal-500">
+			Ver más proyectos →
+		</a>
+	</div>
+</section>
