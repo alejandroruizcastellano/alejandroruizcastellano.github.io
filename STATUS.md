@@ -1,6 +1,6 @@
 # Estado del proyecto — Portfolio Alejandro Ruiz Castellano
 
-_Última actualización: 2026-06-14_
+_Última actualización: 2026-06-15_
 
 ## Resumen
 
@@ -28,8 +28,8 @@ Tareas ya identificadas previamente, sin resolver aún:
 
 1. ~~**Modificar el encabezado (Hero)**: ajustar el contenido/diseño debajo del nombre.~~ ✅ Hecho y desplegado 2026-06-15: párrafo sustituido por "¡Bienvenid@ a mi portfolio!"; título "Ingeniero Técnico Industrial".
 2. ~~**Foto de perfil**: sustituir el círculo placeholder "AR" por la foto real del usuario.~~ ✅ Hecho y desplegado 2026-06-15: `public/images/profile.png` (foto3.png, 200px, object-cover/object-top).
-3. ~~**Links de repos por proyecto**: enlazar cada proyecto de `src/data/projects.ts` a su repo de GitHub correspondiente.~~ ✅ Hecho 2026-06-15: Forecasting-Retail---ML, Lead-Scoring-ML, Optimizacion-ecommerce, Analisis-mercado-inmobiliario.
-4. **Segunda opción de visualización por proyecto**: además del link a GitHub, añadir una vista con un resumen/conclusiones del proyecto (tipo presentación). Pendiente decidir el formato (modal, página individual por proyecto, sección expandible, etc.).
+3. ~~**Links de repos por proyecto**: enlazar cada proyecto de `src/data/projects.ts` a su repo de GitHub correspondiente.~~ ✅ Hecho y desplegado 2026-06-15: Forecasting-Retail---ML, Lead-Scoring-ML, Optimizacion-ecommerce, Analisis-mercado-inmobiliario. Además, se añadió un icono de GitHub (estilo botón sutil) en la esquina superior derecha del header de cada `ProjectCard`, ya que la tarjeta entera sigue enlazando al repo.
+4. **Segunda opción de visualización por proyecto**: además del link a GitHub, añadir una vista con un resumen/conclusiones del proyecto (tipo presentación). Pendiente decidir el formato (modal, página individual por proyecto, sección expandible, etc.). Nota: como la tarjeta entera sigue siendo un `<a>` a GitHub (ver punto 3), hay que decidir cómo convive con el punto de entrada a esta segunda vista (¿la tarjeta deja de ser un link completo y el icono de GitHub pasa a ser el único acceso al repo?).
 5. **Imagen representativa por proyecto**: en `ProjectCard.astro`, sustituir el icono SVG del header por una imagen representativa del proyecto (actualmente usa iconos por categoría: chart-line, users, sun, cart, building).
 
 ## Notas de workflow
@@ -39,3 +39,4 @@ Tareas ya identificadas previamente, sin resolver aún:
 - El push a GitHub debe hacerse desde VS Code (Source Control / Sync Changes), ya que la terminal no tiene credenciales git configuradas (usa la auth de GitHub de VS Code).
 - Para comprobar el estado del deploy: `curl -s "https://api.github.com/repos/alejandroruizcastellano/alejandroruizcastellano.github.io/actions/runs?per_page=3"`.
 - **Importante**: el usuario quiere que cada cambio se despliegue y se verifique en el sitio en vivo antes de pasar a la siguiente tarea (acordado 2026-06-15). Tras cada commit, esperar a que el usuario haga push desde VS Code, y comprobar el deploy con el comando de arriba antes de continuar.
+- **Importante (2026-06-15)**: antes de hacer commit/push, levantar `npm run dev` (http://localhost:4321/) para que el usuario vea cada cambio reflejado en local primero. Solo cuando lo apruebe, hacer commit y pedir el push para desplegar.
