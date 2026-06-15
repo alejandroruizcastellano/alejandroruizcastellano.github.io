@@ -9,15 +9,13 @@ export interface Project {
 	featured: boolean;
 }
 
-// TODO: actualizar con las URLs reales de los repos antes del deploy final.
-// Los marcados como PENDIENTE necesitan crear/migrar el repo desde Notion.
 export const projects: Project[] = [
 	{
 		title: 'Retail sales forecasting',
 		description:
 			'Modelo de predicción recursiva a 8 días con HistGradientBoostingRegressor. Feature engineering temporal con lags, rolling averages y variables de stock-out.',
 		tags: ['Python', 'scikit-learn', 'Pandas', 'Matplotlib/Seaborn'],
-		github: 'https://github.com/alejandroruizcastellano',
+		github: 'https://github.com/alejandroruizcastellano/Forecasting-Retail---ML',
 		category: 'ml',
 		icon: 'chart-line',
 		featured: true,
@@ -27,7 +25,7 @@ export const projects: Project[] = [
 		description:
 			'Sistema de scoring de leads combinando segmentación no supervisada (KMeans) con clasificación (Logistic Regression). AUC de 0.8515.',
 		tags: ['Python', 'KMeans', 'Logistic Regression', 'scikit-learn'],
-		github: 'https://github.com/alejandroruizcastellano',
+		github: 'https://github.com/alejandroruizcastellano/Lead-Scoring-ML',
 		category: 'ml',
 		icon: 'users',
 		featured: true,
@@ -37,7 +35,7 @@ export const projects: Project[] = [
 		description:
 			'Análisis de optimización de conversión (CRO) para e-commerce. Estudio del funnel de conversión, identificación de puntos de fuga y recomendaciones data-driven.',
 		tags: ['Python', 'Pandas', 'Analytics', 'Matplotlib/Seaborn'],
-		github: 'https://github.com/alejandroruizcastellano',
+		github: 'https://github.com/alejandroruizcastellano/Optimizacion-ecommerce',
 		category: 'analytics',
 		icon: 'cart',
 		featured: true,
@@ -57,7 +55,7 @@ export const projects: Project[] = [
 		description:
 			'Análisis del mercado inmobiliario con exploración de datos, visualizaciones y modelado.',
 		tags: ['Python', 'Pandas', 'Matplotlib/Seaborn'],
-		github: 'https://github.com/alejandroruizcastellano',
+		github: 'https://github.com/alejandroruizcastellano/Analisis-mercado-inmobiliario',
 		category: 'analytics',
 		icon: 'building',
 		featured: true,

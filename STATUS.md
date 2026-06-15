@@ -18,7 +18,7 @@ Repo: `alejandroruizcastellano/alejandroruizcastellano.github.io` (rama `main`, 
 ## Pendiente (Fase 7 — contenido final, según lo acordado)
 
 Tareas ya identificadas previamente, sin resolver aún:
-- 4 proyectos con link a GitHub aún apuntan al perfil genérico (placeholder) en lugar de su repo específico: "Retail sales forecasting", "Lead scoring model", "CRO e-commerce analysis", "Real estate market analysis".
+- ~~4 proyectos con link a GitHub aún apuntan al perfil genérico (placeholder) en lugar de su repo específico.~~ ✅ Hecho 2026-06-15 (ver tarea 3 de abajo).
 - LinkedIn real (actualmente `'#'` en Hero, Contact, Footer).
 - Email real (actualmente `mailto:#` en Contact y Footer).
 - CV en PDF: falta el archivo en `/public/documents/` (referenciado pero no existe).
@@ -26,9 +26,9 @@ Tareas ya identificadas previamente, sin resolver aún:
 
 ## Nuevas tareas para la próxima sesión (pedidas por el usuario el 2026-06-14)
 
-1. ~~**Modificar el encabezado (Hero)**: ajustar el contenido/diseño debajo del nombre.~~ ✅ Hecho 2026-06-15: párrafo sustituido por "¡Bienvenid@ a mi portfolio!".
-2. ~~**Foto de perfil**: sustituir el círculo placeholder "AR" por la foto real del usuario.~~ ✅ Hecho 2026-06-15: `public/images/profile.jpg` (foto1.jpg).
-3. **Links de repos por proyecto**: enlazar cada proyecto de `src/data/projects.ts` a su repo de GitHub correspondiente (relacionado con el punto de Fase 7 de arriba).
+1. ~~**Modificar el encabezado (Hero)**: ajustar el contenido/diseño debajo del nombre.~~ ✅ Hecho y desplegado 2026-06-15: párrafo sustituido por "¡Bienvenid@ a mi portfolio!"; título "Ingeniero Técnico Industrial".
+2. ~~**Foto de perfil**: sustituir el círculo placeholder "AR" por la foto real del usuario.~~ ✅ Hecho y desplegado 2026-06-15: `public/images/profile.png` (foto3.png, 200px, object-cover/object-top).
+3. ~~**Links de repos por proyecto**: enlazar cada proyecto de `src/data/projects.ts` a su repo de GitHub correspondiente.~~ ✅ Hecho 2026-06-15: Forecasting-Retail---ML, Lead-Scoring-ML, Optimizacion-ecommerce, Analisis-mercado-inmobiliario.
 4. **Segunda opción de visualización por proyecto**: además del link a GitHub, añadir una vista con un resumen/conclusiones del proyecto (tipo presentación). Pendiente decidir el formato (modal, página individual por proyecto, sección expandible, etc.).
 5. **Imagen representativa por proyecto**: en `ProjectCard.astro`, sustituir el icono SVG del header por una imagen representativa del proyecto (actualmente usa iconos por categoría: chart-line, users, sun, cart, building).
 
