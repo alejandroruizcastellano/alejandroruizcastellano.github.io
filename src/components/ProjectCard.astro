@@ -1,5 +1,6 @@
 ---
 // Tarjeta de proyecto: header con gradiente por categoría, título, descripción, tags, link GitHub
+import Icon from './Icon.astro';
 import type { Project } from '../data/projects';
 
 interface Props extends Project {}
@@ -20,9 +21,10 @@ const gradients: Record<Project['category'], string> = {
 	class="group flex flex-col overflow-hidden rounded-xl border border-[0.5px] border-slate-200 bg-white transition-colors hover:border-teal-500"
 >
 	<div
-		class="flex h-[90px] items-center justify-center"
+		class="relative flex h-[90px] items-center justify-center"
 		style={{ background: gradients[category] }}
 	>
+		<Icon name="github" class="absolute top-2 right-2 h-5 w-5 text-white/70 transition-colors group-hover:text-white" />
 		<svg
 			xmlns="http://www.w3.org/2000/svg"
 			viewBox="0 0 24 24"
