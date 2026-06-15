@@ -25,6 +25,10 @@ pnpm-debug.log*
 
 # context files (not part of the deployed site)
 portfolio-context/
+picture/
 
 # local Claude Code settings
 .claude/
+
+# brainstorming companion mockups
+.superpowers/
