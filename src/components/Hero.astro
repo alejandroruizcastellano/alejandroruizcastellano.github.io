@@ -4,8 +4,8 @@ import Icon from './Icon.astro';
 
 const cvHref = '/documents/cv_alejandro_ruiz.pdf';
 const githubHref = 'https://github.com/alejandroruizcastellano';
-// TODO: sustituir por la URL real de LinkedIn antes del deploy final
-const linkedinHref = '#';
+const linkedinHref = 'https://www.linkedin.com/in/alejandroruizc';
+const emailHref = 'https://mail.google.com/mail/?view=cm&to=aleruizcastellano@gmail.com';
 ---
 
 <section
@@ -32,7 +32,18 @@ const linkedinHref = '#';
 					Mi CV
 				</a>
 				<a
+					href={emailHref}
+					target="_blank"
+					rel="noopener noreferrer"
+					aria-label="Email"
+					class="flex h-10 w-10 items-center justify-center rounded-md border border-white/30 text-white transition-colors hover:border-teal-400 hover:text-teal-400"
+				>
+					<Icon name="email" class="h-5 w-5" />
+				</a>
+				<a
 					href={linkedinHref}
+					target="_blank"
+					rel="noopener noreferrer"
 					aria-label="LinkedIn"
 					class="flex h-10 w-10 items-center justify-center rounded-md border border-white/30 text-white transition-colors hover:border-teal-400 hover:text-teal-400"
 				>

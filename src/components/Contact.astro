@@ -2,9 +2,8 @@
 // CTA con fondo oscuro: email + LinkedIn
 import Icon from './Icon.astro';
 
-// TODO: sustituir por el email y la URL de LinkedIn reales antes del deploy final
-const emailHref = 'mailto:#';
-const linkedinHref = '#';
+const emailHref = 'https://mail.google.com/mail/?view=cm&to=aleruizcastellano@gmail.com';
+const linkedinHref = 'https://www.linkedin.com/in/alejandroruizc';
 ---
 
 <section id="contacto" class="mx-auto max-w-4xl px-6 py-8 sm:px-10 sm:py-12">
@@ -15,6 +14,8 @@ const linkedinHref = '#';
 		<div class="mt-6 flex flex-wrap justify-center gap-3">
 			<a
 				href={emailHref}
+				target="_blank"
+				rel="noopener noreferrer"
 				aria-label="Email"
 				class="flex h-10 w-10 items-center justify-center rounded-md border border-white/30 text-white transition-colors hover:border-teal-400 hover:text-teal-400"
 			>
