@@ -5,7 +5,7 @@ export interface Project {
 	tags: string[];
 	github: string;
 	category: 'ml' | 'engineering' | 'analytics';
-	icon: 'chart-line' | 'users' | 'sun' | 'cart' | 'building';
+	icon: 'chart-line' | 'users' | 'sun' | 'cart' | 'building' | 'dashboard';
 	featured: boolean;
 }
 
@@ -48,6 +48,16 @@ export const projects: Project[] = [
 		github: 'https://github.com/alejandroruizcastellano/Analisis-planta-generacion-fotovoltaica',
 		category: 'engineering',
 		icon: 'sun',
+		featured: true,
+	},
+	{
+		title: 'People & HR analytics',
+		description:
+			'Pipeline analítico end-to-end desde MySQL hasta dashboard interactivo en Power BI. Análisis de turnover, tenure, compensación y evaluaciones de desempeño en 4 vistas interconectadas.',
+		tags: ['SQL', 'Power BI', 'DAX', 'Power Query'],
+		github: 'https://github.com/alejandroruizcastellano/People-HR-Analytics',
+		category: 'analytics',
+		icon: 'dashboard',
 		featured: true,
 	},
 	{
