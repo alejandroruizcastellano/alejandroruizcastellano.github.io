@@ -1,0 +1,96 @@
+---
+import type { Project } from '../data/projects';
+
+interface Props {
+	project: Project;
+	modalId: string;
+}
+
+const { project, modalId } = Astro.props;
+const { summary } = project;
+---
+
+{summary && (
+	<div
+		id={modalId}
+		class="fixed inset-0 z-50 flex hidden items-center justify-center bg-black/50 backdrop-blur-sm"
+		data-modal-backdrop
+	>
+		<div class="relative mx-4 max-h-[85vh] w-full max-w-3xl overflow-y-auto rounded-xl border border-slate-200 bg-white p-6 shadow-xl sm:mx-0">
+			<button
+				data-modal-close
+				class="absolute top-3 right-3 flex h-8 w-8 items-center justify-center rounded-full text-slate-400 transition-colors hover:bg-slate-100 hover:text-slate-600"
+				aria-label="Cerrar"
+			>
+				<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" class="h-5 w-5">
+					<path d="M6.28 5.22a.75.75 0 00-1.06 1.06L8.94 10l-3.72 3.72a.75.75 0 101.06 1.06L10 11.06l3.72 3.72a.75.75 0 101.06-1.06L11.06 10l3.72-3.72a.75.75 0 00-1.06-1.06L10 8.94 6.28 5.22z" />
+				</svg>
+			</button>
+
+			<div class="mb-4 flex flex-wrap gap-1.5">
+				{project.tags.map((tag) => (
+					<span class="rounded-sm bg-teal-50 px-2 py-0.5 text-[11px] text-teal-600">
+						{tag}
+					</span>
+				))}
+			</div>
+
+			<h3 class="mb-3 text-lg font-semibold text-navy-800">{project.title}</h3>
+
+			<div class="space-y-4 text-sm leading-relaxed text-slate-600">
+				<div>
+					<h4 class="mb-1 text-xs font-semibold uppercase tracking-wider text-slate-400">Objetivo</h4>
+					<p>{summary.objetivo}</p>
+				</div>
+
+				<div>
+					<h4 class="mb-1 text-xs font-semibold uppercase tracking-wider text-slate-400">Enfoque</h4>
+					<ul class="list-inside list-disc space-y-0.5">
+						{summary.enfoque.map((item) => <li>{item}</li>)}
+					</ul>
+				</div>
+
+				<div>
+					<h4 class="mb-1 text-xs font-semibold uppercase tracking-wider text-slate-400">Resultados clave</h4>
+					<ul class="list-inside list-disc space-y-0.5">
+						{summary.resultados.map((item) => <li>{item}</li>)}
+					</ul>
+				</div>
+
+				{summary.acciones && (
+					<div>
+						<h4 class="mb-1 text-xs font-semibold uppercase tracking-wider text-slate-400">Próximos pasos</h4>
+						<ul class="list-inside list-disc space-y-0.5">
+							{summary.acciones.map((item) => <li>{item}</li>)}
+						</ul>
+					</div>
+				)}
+
+				<div>
+					<h4 class="mb-1 text-xs font-semibold uppercase tracking-wider text-slate-400">Herramientas</h4>
+					<div class="flex flex-wrap gap-1.5">
+						{summary.herramientas.map((tool) => (
+							<span class="rounded-md bg-slate-100 px-2 py-0.5 text-[11px] text-slate-500">
+								{tool}
+							</span>
+						))}
+					</div>
+				</div>
+			</div>
+
+			<div class="mt-5 border-t border-slate-100 pt-4">
+				<a
+					href={project.github}
+					target="_blank"
+					rel="noopener noreferrer"
+					class="inline-flex items-center gap-1.5 text-sm font-medium text-teal-600 transition-colors hover:text-teal-500"
+				>
+					Ver en GitHub
+					<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" class="h-4 w-4">
+						<path fill-rule="evenodd" d="M5.22 14.78a.75.75 0 001.06 0l7.22-7.22v5.69a.75.75 0 001.5 0v-7.5a.75.75 0 00-.75-.75h-7.5a.75.75 0 000 1.5h5.69l-7.22 7.22a.75.75 0 000 1.06z" clip-rule="evenodd" />
+					</svg>
+				</a>
+			</div>
+		</div>
+	</div>
+)}
