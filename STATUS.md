@@ -1,6 +1,6 @@
 # Estado del proyecto — Portfolio Alejandro Ruiz Castellano
 
-_Última actualización: 2026-06-16_
+_Última actualización: 2026-06-20_
 
 ## Resumen
 
@@ -24,16 +24,20 @@ Repo: `alejandroruizcastellano/alejandroruizcastellano.github.io` (rama `main`, 
 5. ✅ **LinkedIn real** — `https://www.linkedin.com/in/alejandroruizc` en Hero, Contact y Footer.
 6. ✅ **Email real** — Gmail Compose (`https://mail.google.com/mail/?view=cm&to=aleruizcastellano@gmail.com`) en Hero, Contact y Footer. Abre en pestaña nueva.
 
+## Completado (sesión 2026-06-20)
+
+7. ✅ **Proyecto People & HR Analytics** — nueva tarjeta con ilustración SVG tipo dashboard (KPI, barras, donut, línea, lista) e icono `dashboard`.
+8. ✅ **Modales de detalle por proyecto** — icono de ojo junto al de GitHub en cada tarjeta. Click abre un modal con resumen ejecutivo (objetivo, enfoque, resultados clave, herramientas). Cierre con X, backdrop o Escape. Componente `ProjectModal.astro` + JS inline en `Projects.astro`.
+9. ✅ **Resúmenes de los 6 proyectos** — contenido extraído de los READMEs de cada repositorio. Proyectos ML incluyen modelo utilizado.
+10. ✅ **Sección "Próximos pasos"** en 3 proyectos (CRO e-commerce, Fotovoltaica, Real estate) — acciones orientadas a negocio, ceñidas al contenido del README.
+11. ✅ **Iconos de tarjeta mejorados** — fondo blanco sólido con sombra, color slate, aspecto de botón clickable.
+
 ## Pendiente
 
 ### Listo para implementar en cuanto el usuario aporte el archivo/dato
 
 - **CV en PDF** — el link ya existe en el Hero (`/documents/cv_alejandro_ruiz.pdf`) pero el archivo no está en `/public/documents/`. Pendiente de que el usuario suba el PDF.
 - **Imagen OG** — `/public/images/og-preview.png` referenciada en `Layout.astro` pero no existe. Afecta al preview al compartir el link en redes (LinkedIn, WhatsApp, etc.). Pendiente de diseñar o generar.
-
-### Bloqueado hasta que el usuario aporte contenido
-
-- **Segunda vista por proyecto (tarea 4)** ⏸️ — resumen/conclusiones de cada proyecto. Decisión de diseño tomada (2026-06-16): **Opción B** — la tarjeta sigue siendo un `<a>` a GitHub; se añade un segundo icono junto al de GitHub para abrir la vista de resumen (modal o página individual, por decidir). **Bloqueado**: el usuario debe redactar primero los textos/conclusiones de cada proyecto antes de implementar.
 
 ### Fuera de alcance por ahora (acordado)
 
@@ -42,7 +46,7 @@ Repo: `alejandroruizcastellano/alejandroruizcastellano.github.io` (rama `main`, 
 ## Notas de workflow
 
 - El usuario revisa y aprueba cada paso antes de avanzar ("continúa"/"sí").
-- Commits con `Co-Authored-By: Claude Sonnet 4.6 <noreply@anthropic.com>`.
+- Commits sin co-author de Claude (preferencia del usuario).
 - El push a GitHub debe hacerse desde VS Code (Source Control / Sync Changes), ya que la terminal no tiene credenciales git configuradas (usa la auth de GitHub de VS Code).
 - Para comprobar el estado del deploy: `curl -s "https://api.github.com/repos/alejandroruizcastellano/alejandroruizcastellano.github.io/actions/runs?per_page=3"`.
 - **Importante**: antes de hacer commit/push, levantar `npm run dev` (http://localhost:4321/) para que el usuario vea cada cambio reflejado en local primero. Solo cuando lo apruebe, hacer commit y pedir el push para desplegar.
