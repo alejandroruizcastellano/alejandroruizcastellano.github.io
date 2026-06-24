@@ -1,6 +1,7 @@
 ---
 import Layout from '../../layouts/Layout.astro';
 import ProjectCard from '../../components/ProjectCard.astro';
+import ProjectModal from '../../components/ProjectModal.astro';
 import Footer from '../../components/Footer.astro';
 import { projects } from '../../data/projects';
 
@@ -25,5 +26,45 @@ import { projects } from '../../data/projects';
 		</div>
 	</section>
 
+	{projects.filter(p => p.summary).map((project) => (
+		<ProjectModal project={project} modalId={`modal-${project.github.split('/').pop()}`} />
+	))}
+
 	<Footer />
 </Layout>
+
+<script>
+	document.addEventListener('click', (e) => {
+		const trigger = (e.target as HTMLElement).closest('[data-modal-trigger]');
+		if (trigger) {
+			e.preventDefault();
+			e.stopPropagation();
+			const modalId = trigger.getAttribute('data-modal-trigger')!;
+			document.getElementById(modalId)?.classList.remove('hidden');
+			document.body.style.overflow = 'hidden';
+			return;
+		}
+
+		const backdrop = (e.target as HTMLElement).closest('[data-modal-backdrop]');
+		if (backdrop && e.target === backdrop) {
+			backdrop.classList.add('hidden');
+			document.body.style.overflow = '';
+		}
+
+		const closeBtn = (e.target as HTMLElement).closest('[data-modal-close]');
+		if (closeBtn) {
+			closeBtn.closest('[data-modal-backdrop]')?.classList.add('hidden');
+			document.body.style.overflow = '';
+		}
+	});
+
+	document.addEventListener('keydown', (e) => {
+		if (e.key === 'Escape') {
+			const open = document.querySelector('[data-modal-backdrop]:not(.hidden)');
+			if (open) {
+				open.classList.add('hidden');
+				document.body.style.overflow = '';
+			}
+		}
+	});
+</script>

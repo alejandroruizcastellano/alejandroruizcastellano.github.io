@@ -13,7 +13,7 @@ export interface Project {
 	tags: string[];
 	github: string;
 	category: 'ml' | 'engineering' | 'analytics';
-	icon: 'chart-line' | 'users' | 'sun' | 'cart' | 'building' | 'dashboard';
+	icon: 'chart-line' | 'users' | 'sun' | 'cart' | 'building' | 'dashboard' | 'database';
 	featured: boolean;
 	summary?: ProjectSummary;
 }
@@ -202,6 +202,34 @@ export const projects: Project[] = [
 				'Comprar en ubicaciones menos céntricas sin penalización: la tipología, calidad y estrategia de pricing importan más que los metros o la proximidad a atracciones.',
 			],
 			herramientas: ['Python', 'Pandas', 'Folium', 'Matplotlib', 'Seaborn', 'SQLite'],
+		},
+	},
+	{
+		title: 'E-commerce SQL analysis',
+		description:
+			'Análisis end-to-end de un e-commerce con MySQL: modelado relacional, análisis de ventas y márgenes, y estudio de tráfico web por fuentes, campañas y dispositivos sobre ~32 k pedidos y ~70 k sesiones.',
+		tags: ['MySQL', 'SQL', 'Modelado ER', 'Data Analysis'],
+		github: 'https://github.com/alejandroruizcastellano/Analisis-Ecommerce-SQL',
+		category: 'analytics',
+		icon: 'database',
+		featured: true,
+		summary: {
+			objetivo:
+				'Obtener una visión integral del negocio en dos ejes —ventas y tráfico web— respondiendo a preguntas como qué productos son más rentables, de dónde viene el tráfico que más convierte y qué campañas generan más margen.',
+			enfoque: [
+				'Diseño de esquema relacional (4 tablas, PKs, FKs) e importación de datos CSV en MySQL.',
+				'Análisis de ventas: evolución temporal de ventas brutas y margen, ranking de productos por ingresos y rentabilidad, fechas de lanzamiento.',
+				'Análisis de tráfico web: sesiones por campaña, usuarios únicos vs. recurrentes, fuentes con mayor conversión, estacionalidad y distribución por dispositivo.',
+				'Cruce ventas-tráfico: identificación de las campañas con mayor margen por producto y ROI por canal de adquisición.',
+			],
+			resultados: [
+				'Producto estrella (Osito Cariñoso): 149.570 USD en ventas brutas y 61 % de margen.',
+				'Google (gsearch) genera el 73 % de las sesiones y el 71 % de las ventas brutas.',
+				'62.224 usuarios únicos frente a 70 k sesiones → usuarios recurrentes y fidelización.',
+				'Noviembre como mes pico de tráfico (14.011 sesiones), 77,6 % desde escritorio.',
+				'Brand awareness: la campaña con mayor margen bruto para todos los productos.',
+			],
+			herramientas: ['MySQL', 'SQL', 'MySQL Workbench'],
 		},
 	},
 ];
